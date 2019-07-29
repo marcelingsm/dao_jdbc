@@ -5,6 +5,8 @@
  */
 package dao_jdbc;
 
+import model.entities.Department;
+
 /**
  *
  * @author USER
@@ -15,7 +17,8 @@ public class Dao_jdbc {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       Department obj = new Department(1,"D1");
+        System.out.println(obj.toString());
     }
     
 }
