@@ -5,11 +5,11 @@
  */
 package dao_jdbc;
 
-
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 import model.dao.DaoFactory;
+import model.dao.DepartmentDao;
 import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
@@ -24,12 +24,13 @@ public class Dao_jdbc {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      
+
         Scanner sc = new Scanner(System.in);
-        SellerDao sellerDao = DaoFactory.creatingSellerDao();
-        
-        
-        System.out.println("TEST 1");
+        //SellerDao sellerDao = DaoFactory.creatingSellerDao();
+        DepartmentDao departmentDao = DaoFactory.creatingDepartmentDao();
+        List<Department> list = null;
+
+        /*System.out.println("TEST 1");
         Seller seller = sellerDao.findById(1);
         System.out.println(seller);
         
@@ -57,9 +58,29 @@ public class Dao_jdbc {
         System.out.print("Delete ID:");
         int id = sc.nextInt();
         sellerDao.deleteById(id);
-        System.out.println("DELETED");
+        System.out.println("DELETED");*/
         
-        sc.close();
+        System.out.println("TEST 3");
+        list = departmentDao.findAll();
+        for (Department obj : list) {
+            System.out.println(obj);
+        }
+        
+        /*System.out.println("TEST4");
+        Department dep = new Department(null,"test");
+        departmentDao.insert(dep);*/
+
+        System.out.println("TEST5");
+        Department department = departmentDao.findById(1);
+        department.setName("Computers");
+        departmentDao.update(department);
+        System.out.println("UPDATE OK!");
+
+        System.out.println("TEST6");
+        System.out.print("Delete ID:");
+        int id = sc.nextInt();
+        departmentDao.deleteById(id);
+        System.out.println("DELETED");
+
     }
-    
 }
