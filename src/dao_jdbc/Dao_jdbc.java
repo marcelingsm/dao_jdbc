@@ -5,7 +5,10 @@
  */
 package dao_jdbc;
 
+
+import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
 import model.entities.Department;
@@ -22,6 +25,7 @@ public class Dao_jdbc {
      */
     public static void main(String[] args) {
       
+        Scanner sc = new Scanner(System.in);
         SellerDao sellerDao = DaoFactory.creatingSellerDao();
         
         
@@ -42,6 +46,20 @@ public class Dao_jdbc {
             System.out.println(obj);
         }
         
+        
+        System.out.println("TEST5");
+        seller = sellerDao.findById(1);
+        seller.setName("Diana Silva");
+        sellerDao.update(seller);
+        System.out.println("UPDATE OK!");
+    
+        System.out.println("TEST6");
+        System.out.print("Delete ID:");
+        int id = sc.nextInt();
+        sellerDao.deleteById(id);
+        System.out.println("DELETED");
+        
+        sc.close();
     }
     
 }
