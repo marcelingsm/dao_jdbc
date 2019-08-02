@@ -5,6 +5,9 @@
         <group>
             <file>file:/C:/Users/USER/Documents/Dao_jdbc/src/dao_jdbc/Dao_jdbc.java</file>
             <file>file:/C:/Users/USER/Documents/Dao_jdbc/src/model/entities/Seller.java</file>
+            <file>file:/C:/Users/USER/Documents/Dao_jdbc/src/model/dao/DaoFactory.java</file>
+            <file>file:/C:/Users/USER/Documents/Dao_jdbc/src/model/dao/SellerDao.java</file>
+            <file>file:/C:/Users/USER/Documents/Dao_jdbc/src/model/dao/impl/SellerDaoJDBC.java</file>
             <file>file:/C:/Users/USER/Documents/Dao_jdbc/src/model/entities/Department.java</file>
         </group>
     </open-files>
