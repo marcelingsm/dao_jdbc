@@ -24,15 +24,23 @@ public class Dao_jdbc {
       
         SellerDao sellerDao = DaoFactory.creatingSellerDao();
         
+        
+        System.out.println("TEST 1");
         Seller seller = sellerDao.findById(1);
         System.out.println(seller);
         
+        System.out.println("TEST 2");
         Department department = new Department(2,null);
         List<Seller> list = sellerDao.findByDepartment(department);
         for(Seller obj : list){
             System.out.println(obj);
         }
         
+        System.out.println("TEST 3");
+        list = sellerDao.findAll();
+        for(Seller obj : list){
+            System.out.println(obj);
+        }
         
     }
     
